@@ -16,7 +16,7 @@ const useStyles = makeStyles({
   },
   topRow: {
     width: '100%',
-    backgroundColor: '#0066cc',
+    backgroundColor: '#1a56b8',
     color: '#fff',
     fontSize: 20,
     fontWeight: 'bold',
@@ -36,7 +36,7 @@ const useStyles = makeStyles({
     left: '50%', // Position the text horizontally in the middle
     transform: 'translate(-50%, -50%)', // Center the text precisely
     color: '#fff',
-    fontSize: 32, 
+    fontSize: 30, // Set the font size to 30
     fontWeight: 'bold',
     textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', // Add text shadow for better visibility
   },
@@ -71,10 +71,10 @@ const Header = () => {
 
   return (
     <div id="header" className={`${classes.header} ${scrolled ? classes.scrolled : ''}`}>
-      <div className={classes.topRow}>Contact us at 12345667</div>
+      <div className={classes.topRow}>Contact us at +919312345667</div>
       <div className={`${classes.bottomRow} ${scrolled ? classes.faded : ''}`}>
         <img src={bannerImage} alt="Banner" className={classes.image} />
-        <div className={classes.floatedText}>About Admissions at AMC College of Engineering</div>
+        <div className={classes.floatedText}>About Admissions at AMC College of Engineering, Bangalore</div>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { makeStyles } from '@mui/styles';
 const useStyles = makeStyles({
   mainBody: {
     width: '100%',
-    backgroundColor: '#80ffff',
+    // backgroundColor: '#80ffff',
   },
 });
 
