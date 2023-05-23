@@ -7,6 +7,7 @@ import Footer from './components/footer/Footer';
 import AboutCollege from './components/about/AboutCollege';
 import MainBody from './components/body/MainBody';
 import './App.css';
+import ContactForm from './components/contactform/ContactForm';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
 
         <AboutCollege />
         <Contact />
+        <ContactForm />
         {/* <FeeStructure /> */}
         {/* <VideoSection /> */}
       </MainBody>
