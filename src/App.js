@@ -12,9 +12,10 @@ import ContactForm from './components/contactform/ContactForm';
 function App() {
   return (
     <div className="App">
+        <Contact />
       <Header />
       <MainBody>
-      <Contact />
+      {/* <Contact /> */}
 
         <AboutCollege />
         <Contact />
