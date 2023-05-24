@@ -1,10 +1,7 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles({
-
+const styles = {
   footer: {
-    
     backgroundColor: '#1a56b8',
     display: 'flex',
     justifyContent: 'center',
@@ -23,14 +20,13 @@ const useStyles = makeStyles({
     fontSize: '12px',
     color: '#ffffff',
   },
-});
+};
 
 const Footer = () => {
-  const classes = useStyles();
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className={classes.footer}>
+    <div style={styles.footer}>
       <div>
         <p>
           Office Opening Hours:
@@ -63,7 +59,7 @@ const Footer = () => {
           <br />
           [Insert your office address here]
         </p>
-        <p className={classes.copyright}>
+        <p style={styles.copyright}>
           &copy; {currentYear} DreamAdmit. All rights reserved.
         </p>
       </div>

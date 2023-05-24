@@ -1,9 +1,6 @@
 import React from 'react';
-import { makeStyles } from '@mui/styles';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 
-const useStyles = makeStyles({
+const styles = {
   contactForm: {
     display: 'flex',
     flexDirection: 'column',
@@ -26,53 +23,41 @@ const useStyles = makeStyles({
     marginBottom: '20px',
     fontWeight: 'normal',
   },
-});
+};
 
 const ContactForm = () => {
-  const classes = useStyles();
-
   const handleSubmit = (event) => {
     event.preventDefault();
     // Handle form submission logic here
   };
 
   return (
-    <div className={classes.contactForm}>
-      <h2 className={classes.heading}>
+    <div style={styles.contactForm}>
+      <h2 style={styles.heading}>
         Reach out to us to inquire about this and many more colleges
       </h2>
       <form onSubmit={handleSubmit}>
-        <TextField
-          className={classes.formField}
-          label="Name"
-          variant="outlined"
-          fullWidth
+        <input
+          style={styles.formField}
+          type="text"
+          placeholder="Name"
           required
         />
-        <TextField
-          className={classes.formField}
-          label="Phone"
-          variant="outlined"
+        <input
+          style={styles.formField}
           type="tel"
-          fullWidth
+          placeholder="Phone"
           required
         />
-        <TextField
-          className={classes.formField}
-          label="Email"
-          variant="outlined"
+        <input
+          style={styles.formField}
           type="email"
-          fullWidth
+          placeholder="Email"
           required
         />
-        <Button
-          className={classes.submitButton}
-          variant="contained"
-          color="primary"
-          type="submit"
-        >
+        <button style={styles.submitButton} type="submit">
           Submit
-        </Button>
+        </button>
       </form>
     </div>
   );
