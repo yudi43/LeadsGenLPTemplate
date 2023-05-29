@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import Header from './components/header/Header';
 import Contact from './components/contactus/Contact';
-// import FeeStructure from './components/feestructure/FeeStructure';
-// import VideoSection from './components/video/VideoSection';
 import Footer from './components/footer/Footer';
 import AboutCollege from './components/about/AboutCollege';
 import MainBody from './components/body/MainBody';
@@ -12,19 +10,28 @@ import ContactForm from './components/contactform/ContactForm';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
 import { getAnalytics } from 'firebase/analytics';
+import { getDatabase } from 'firebase/database'; // Import the Realtime Database module
 
 function App() {
   useEffect(() => {
     // Your web app's Firebase configuration
     const firebaseConfig = {
-      // Paste your Firebase configuration object here
+      apiKey: "AIzaSyBab-G7F-B37NF3jGO8YvM7sDmkuFleF5I",
+      authDomain: "leadgenlp.firebaseapp.com",
+      databaseURL: "https://leadgenlp-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "leadgenlp",
+      storageBucket: "leadgenlp.appspot.com",
+      messagingSenderId: "701596933248",
+      appId: "1:701596933248:web:204e04eb6d0eb2ec805a65",
+      measurementId: "G-14QFLYWYGN"
     };
 
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
+    const database = getDatabase(app); // Initialize the Realtime Database
 
-    // Clean up the Firebase app and analytics when the component unmounts
+    // Clean up the Firebase app, analytics, and database when the component unmounts
     return () => {
       // Clean up any Firebase related resources
     };
@@ -35,12 +42,9 @@ function App() {
       <Contact />
       <Header />
       <MainBody>
-        {/* <Contact /> */}
         <AboutCollege />
         <Contact />
         <ContactForm />
-        {/* <FeeStructure /> */}
-        {/* <VideoSection /> */}
       </MainBody>
       <Footer />
     </div>
