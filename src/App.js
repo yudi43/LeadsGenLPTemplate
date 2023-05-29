@@ -1,3 +1,4 @@
+
 import React, { useEffect } from 'react';
 import Header from './components/header/Header';
 import Contact from './components/contactus/Contact';
@@ -7,13 +8,11 @@ import MainBody from './components/body/MainBody';
 import './App.css';
 import ContactForm from './components/contactform/ContactForm';
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
+import { getDatabase } from 'firebase/database';
 
 function App() {
   useEffect(() => {
-    // Your web app's Firebase configuration
     const firebaseConfig = {
       apiKey: "AIzaSyBab-G7F-B37NF3jGO8YvM7sDmkuFleF5I",
       authDomain: "leadgenlp.firebaseapp.com",
@@ -25,11 +24,12 @@ function App() {
       measurementId: "G-14QFLYWYGN"
     };
 
-    // Initialize Firebase
+   // Initialize Firebase
+    // eslint-disable-next-line no-unused-vars
     const app = initializeApp(firebaseConfig);
-    // const analytics = getAnalytics(app);
+    // eslint-disable-next-line no-unused-vars
+    const database = getDatabase(app); // Initialize the Realtime Database
 
-    // Clean up the Firebase app when the component unmounts
     return () => {
       // Clean up any Firebase related resources
     };
