@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { getDatabase, ref, push, set } from 'firebase/database';
+const TickIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="green" width="48px" height="48px">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M9 16.2l-3.6-3.6L4 14l5 5L20 7l-1.4-1.4z"/>
+  </svg>
+);
 
 const styles = {
   contactForm: {
@@ -94,6 +100,9 @@ const ContactForm = () => {
     if (submissionStatus === 'success') {
       dialogContent = (
         <div>
+                    <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '10px' }}>
+            <TickIcon />
+          </div>
           <h2>Thank you for your submission!</h2>
           <p>We appreciate your interest and will get back to you soon.</p>
         </div>
