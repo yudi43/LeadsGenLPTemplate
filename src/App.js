@@ -7,10 +7,8 @@ import MainBody from './components/body/MainBody';
 import './App.css';
 import ContactForm from './components/contactform/ContactForm';
 
-// Import the functions you need from the SDKs you need
+// Import the function you need from the SDK
 import { initializeApp } from 'firebase/app';
-import { getAnalytics } from 'firebase/analytics';
-import { getDatabase } from 'firebase/database'; // Import the Realtime Database module
 
 function App() {
   useEffect(() => {
@@ -18,7 +16,6 @@ function App() {
     const firebaseConfig = {
       apiKey: "AIzaSyBab-G7F-B37NF3jGO8YvM7sDmkuFleF5I",
       authDomain: "leadgenlp.firebaseapp.com",
-      databaseURL: "https://leadgenlp-default-rtdb.asia-southeast1.firebasedatabase.app",
       projectId: "leadgenlp",
       storageBucket: "leadgenlp.appspot.com",
       messagingSenderId: "701596933248",
@@ -27,11 +24,9 @@ function App() {
     };
 
     // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    const database = getDatabase(app); // Initialize the Realtime Database
+    initializeApp(firebaseConfig);
 
-    // Clean up the Firebase app, analytics, and database when the component unmounts
+    // Clean up the Firebase app when the component unmounts
     return () => {
       // Clean up any Firebase related resources
     };
@@ -43,7 +38,6 @@ function App() {
       <Header />
       <MainBody>
         <AboutCollege />
-        <Contact />
         <ContactForm />
       </MainBody>
       <Footer />
