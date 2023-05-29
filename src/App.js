@@ -7,8 +7,9 @@ import MainBody from './components/body/MainBody';
 import './App.css';
 import ContactForm from './components/contactform/ContactForm';
 
-// Import the function you need from the SDK
+// Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
 
 function App() {
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
     const firebaseConfig = {
       apiKey: "AIzaSyBab-G7F-B37NF3jGO8YvM7sDmkuFleF5I",
       authDomain: "leadgenlp.firebaseapp.com",
+      databaseURL: "https://leadgenlp-default-rtdb.asia-southeast1.firebasedatabase.app",
       projectId: "leadgenlp",
       storageBucket: "leadgenlp.appspot.com",
       messagingSenderId: "701596933248",
@@ -24,7 +26,8 @@ function App() {
     };
 
     // Initialize Firebase
-    initializeApp(firebaseConfig);
+    const app = initializeApp(firebaseConfig);
+    // const analytics = getAnalytics(app);
 
     // Clean up the Firebase app when the component unmounts
     return () => {
@@ -38,6 +41,7 @@ function App() {
       <Header />
       <MainBody>
         <AboutCollege />
+        <Contact />
         <ContactForm />
       </MainBody>
       <Footer />
