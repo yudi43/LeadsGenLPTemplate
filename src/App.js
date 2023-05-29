@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/header/Header';
 import Contact from './components/contactus/Contact';
 // import FeeStructure from './components/feestructure/FeeStructure';
@@ -9,14 +9,33 @@ import MainBody from './components/body/MainBody';
 import './App.css';
 import ContactForm from './components/contactform/ContactForm';
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from 'firebase/app';
+import { getAnalytics } from 'firebase/analytics';
+
 function App() {
+  useEffect(() => {
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      // Paste your Firebase configuration object here
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    // Clean up the Firebase app and analytics when the component unmounts
+    return () => {
+      // Clean up any Firebase related resources
+    };
+  }, []);
+
   return (
     <div className="App">
-        <Contact />
+      <Contact />
       <Header />
       <MainBody>
-      {/* <Contact /> */}
-
+        {/* <Contact /> */}
         <AboutCollege />
         <Contact />
         <ContactForm />
